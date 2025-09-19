@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    form {
+      display: inline-block;
+      text-align: left;
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input, select, button {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 250px;
+    }
+    footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Welcome to City Hospital</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#appointment">Appointments</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Your Health, Our Priority</h2>
+    <p>We provide 24/7 emergency services, advanced care, and experienced doctors.</p>
+  </section>
+
+  <!-- Doctors Section -->
+  <section id="doctors">
+    <h2>Meet Our Doctors</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li> Dr. Smith – Cardiologist</li>
+      <li> Dr. Patel – Neurologist</li>
+      <li> Dr. Johnson – Pediatrician</li>
+      <li> Dr. Kumar – Orthopedic</li>
+    </ul>
+  </section>
+
+  <!-- Appointment Section -->
+  <section id="appointment">
+    <h2>Book an Appointment</h2>
+    <form onsubmit="submitForm(event)">
+      <label>Name: <input type="text" id="name" required></label>
+      <label>Email: <input type="email" id="email" required></label>
+      <label>Doctor:
+        <select id="doctor">
+          <option>Dr. Smith - Cardiology</option>
+          <option>Dr. Patel - Neurology</option>
+          <option>Dr. Johnson - Pediatrics</option>
+          <option>Dr. Kumar - Orthopedic</option>
+        </select>
+      </label>
+      <label>Date: <input type="date" id="date" required></label>
+      <button type="submit">Book</button>
+    </form>
+    <p id="message" style="margin-top: 10px; font-weight: bold;"></p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Address: 123 Health Street, Hyderabad</p>
+    <p>📞 Emergency: +91 98765 43210</p>
+    <p>📧 Email: info@cityhospital.com</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 City Hospital</p>
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const doctor = document.getElementById("doctor").value;
+      const date = document.getElementById("date").value;
+
+      document.getElementById("message").innerText =
+         Appointment booked for ${name} with ${doctor} on ${date}.;
+    }
+  </script>
+</body>
+</html>
